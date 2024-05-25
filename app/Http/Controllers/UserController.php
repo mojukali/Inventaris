@@ -27,9 +27,11 @@ class UserController extends Controller
 
     public function datauser(){
         $pengguna = User::all();
+        $name = Auth::user()->name;
         // Assign the 'administrator' role to a user
         return view('Dashboard.datauser', [
-            'pengguna' => $pengguna
+            'pengguna' => $pengguna,
+            'name' => $name,
         ]);
     }
 

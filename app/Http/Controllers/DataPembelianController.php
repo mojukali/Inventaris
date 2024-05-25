@@ -18,8 +18,10 @@ class DataPembelianController extends Controller
     public function datapembelian(Request $request)
     {
         $databeli = DataPembelian::all();
+        $name = Auth::user()->name;
         return view('dashboard/datapembelian',[
-            'data' =>$databeli
+            'data' =>$databeli,
+            'name' => $name,
         ]);
     }
 

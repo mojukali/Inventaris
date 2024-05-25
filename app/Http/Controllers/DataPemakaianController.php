@@ -5,13 +5,16 @@ namespace App\Http\Controllers;
 use App\Models\DataPemakaian;
 use Illuminate\Http\Request;
 use App\Models\DataBarang;
+use Illuminate\Support\Facades\Auth;
 
 class DataPemakaianController extends Controller
 {
     public function datapemakaian(Request $request)
     {   
         $data = DataPemakaian::all();
+        $name = Auth::user()->name;
         return view('dashboard/datapemakaian',compact('data'),[
+            'name' => $name,
         ]);
     }
 

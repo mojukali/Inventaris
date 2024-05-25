@@ -15,10 +15,11 @@ class DataBarangController extends Controller
     public function databarang(Request $request)
     {
         $role = Auth::user()->role;
+        $name = Auth::user()->name;
         $data = DataBarang::all();
         return view('Dashboard/databarang',compact('data'),[
             'role' => $role,
-
+            'name' => $name,
         ]);
     }
 

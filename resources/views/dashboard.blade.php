@@ -28,16 +28,57 @@
                         <div class="card flex-fill border-0 " style="background-color: #233a4a">
                             <div class="card-body py-4">
                                 <div class="d-flex align-items-start ">
-                                        <div class="col-6">
+                                    <div class="col-6">
                                         <div class="flex-grow-1 text-light">
-                                            <h4 class="mb-2 text-light">$ 78.00</h4>
-                                            <p class="mb-2">Total Earnings</p>
+                                            <h4 id="greeting" class="mb-2 text-light"></h4>
+                                            <span id="current-day-name"></span>
                                             <div class="mb-0">
-                                                <span class="badge me-2">+9.0%</span>
-                                                <span class="">Since Last Month</span>
+                                                <p id="current-date" class="mt-2"></p>
                                             </div>
                                         </div>
                                     </div>
+                                    <script>
+                                        // Fungsi untuk mendapatkan waktu dan mengubah pesan selamat
+                                        function updateTime() {
+                                            const now = new Date();
+                                            const hour = now.getHours();
+                                    
+                                            let greeting;
+                                            if (hour >= 3 && hour < 11) {
+                                                greeting = "Selamat Pagi";
+                                            } else if (hour >= 11 && hour < 15) {
+                                                greeting = "Selamat Siang";
+                                            } else if (hour >= 15 && hour < 19) {
+                                                greeting = "Selamat Sore";
+                                            } else {
+                                                greeting = "Selamat Malam";
+                                            }
+                                    
+                                            document.getElementById('greeting').textContent = greeting;
+                                    
+                                            // Array untuk nama hari dalam bahasa Indonesia
+                                            const days = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
+                                    
+                                            // Mendapatkan nama hari sekarang
+                                            const dayName = days[now.getDay()];
+                                            document.getElementById('current-day-name').textContent = dayName;
+                                    
+                                            // Mendapatkan tanggal sekarang
+                                            const currentDate = now.toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' });
+                                            document.getElementById('current-date').textContent = currentDate;
+                                    
+                                            // Tampilkan pesan untuk Since Last Month
+                                            // Anda bisa menyesuaikan pesan sesuai kebutuhan
+                                            document.getElementById('since-last-month').textContent = "Since Last Month";
+                                        }
+                                    
+                                        // Panggil updateTime() setiap detik
+                                        setInterval(updateTime, 1000);
+                                    
+                                        // Panggil updateTime() saat halaman dimuat
+                                        updateTime();
+                                        </script>
+                                    
                                     <div class="col-2">
                                     </div>
                                     <div class="col-4">
