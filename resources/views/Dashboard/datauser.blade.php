@@ -6,7 +6,7 @@
     <a href="{{route ('admin.create-user')}}" class="btn btn-md nav__link-btn mt-1 mb-3">
         <i class="bi bi-plus-circle"></i>
         <span class="visually-hidden "> </span>
-        Tambah Account
+        Tambah Akun
     </a>
 </div>        
 <main class="content px-3 py-2">
