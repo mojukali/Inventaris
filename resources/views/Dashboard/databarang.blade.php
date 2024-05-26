@@ -3,8 +3,12 @@
 
 <div class="d-flex">
     <h3>Data Barang</h3>
-    <a href="{{route ('databarang.create')}}" class="py-1 px-3 text-center align-items-center d-flex rounded text-decoration-none button ms-auto"><i class="fa-solid fa-user-plus me-2"></i>Tambah Barang</a>
-  </div>        
+    <a href="{{route ('databarang.create')}}" class="btn btn-md nav__link-btn mt-1 mb-3">
+        <i class="bi bi-plus-circle"></i>
+        <span class="visually-hidden "> </span>
+        Tambah Data Barang
+    </a>
+</div>        
   <main class="content px-3 py-2">
     <div class="container-fluid">
         <!-- Table Element -->

@@ -20,8 +20,10 @@ class DataPemakaianController extends Controller
 
     public function create(){
         $dakai = DataBarang::all();
+        $name = Auth::user()->name;
         return view('datapemakaian.create-datapemakaian',[
             'dakai' => $dakai,
+            'name' => $name,
         ]);
     }
 
@@ -52,10 +54,12 @@ class DataPemakaianController extends Controller
 
     public function edit($id){
         $dakai = DataPemakaian::findOrFail($id);
+        $name = Auth::user()->name;
         $data = DataBarang::whereNot('nama_barang', $dakai->nama_barang)->get();
         return view('datapemakaian.update-datapemakaian',[
             'dakai' => $dakai,
             'data' => $data,
+            'name' => $name,
         ]);
     }
 

@@ -25,9 +25,11 @@ class DataBarangController extends Controller
 
     public function create()
     {
+        $name = Auth::user()->name;
         $dabar = DataBarang::all();
         return view('databarang.create-databarang',[
             'dabar' => $dabar,
+            'name' => $name,
         ]);
     }
 
@@ -52,8 +54,10 @@ class DataBarangController extends Controller
     public function edit( $id)
     {
         $dabar = DataBarang::findOrFail($id);
+        $name = Auth::user()->name;
         return view('databarang.update-databarang',[
             'dabar' => $dabar,
+            'name' => $name,
         ]);
     }
 

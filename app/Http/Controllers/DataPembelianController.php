@@ -27,8 +27,10 @@ class DataPembelianController extends Controller
 
     public function create(){
         $dabel = DataBarang::all();
+        $name = Auth::user()->name;
         return view('datapembelian.create-datapembelian',[
             'dabel' => $dabel,
+            'name' => $name,
         ]);
     }
 
@@ -59,10 +61,13 @@ class DataPembelianController extends Controller
 
     public function edit($id){
         $dabel = DataPembelian::findOrFail($id);
+        $name = Auth::user()->name;
         $data = DataBarang::whereNot('nama_barang', $dabel->nama_barang)->get();
         return view('datapembelian.update-datapembelian',[
             'dabel' => $dabel,
             'data' => $data,
+            'name' => $name,
+            
         ]);
     }
 

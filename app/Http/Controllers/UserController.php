@@ -42,10 +42,12 @@ class UserController extends Controller
         $user = Auth::user()->name;
         $role = Auth::user()->role;
         $post = User::all();
+        $name = Auth::user()->name;
         return view('user.create-user',[
             'user' => $user,
             'post' => $post,
             'role' => $role,
+            'name' => $name,
         ]);
     }
 
@@ -90,11 +92,13 @@ class UserController extends Controller
     {
         //get post by ID
         $post = User::findOrFail($id);
+        $name = Auth::user()->name;
         $data = User::whereNot('role', $post->role)->get();
         //render view with post
         return view('user.update-user', [
             'post' => $post,
             'data' => $data,
+            'name' => $name,
         ]);
     }
     
