@@ -2,21 +2,32 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\PemakaianExport;
 use App\Models\DataPemakaian;
 use Illuminate\Http\Request;
 use App\Models\DataBarang;
 use Illuminate\Support\Facades\Auth;
+use Maatwebsite\Excel\Facades\Excel;
+
 
 class DataPemakaianController extends Controller
 {
     public function datapemakaian(Request $request)
-    {   
-        $data = DataPemakaian::all();
-        $name = Auth::user()->name;
-        return view('dashboard/datapemakaian',compact('data'),[
-            'name' => $name,
-        ]);
+{   
+    $query = DataPemakaian::query();
+
+    if ($request->filled('start_date') && $request->filled('end_date')) {
+        $query->whereBetween('tanggal_pakai', [$request->start_date, $request->end_date]);
     }
+
+    $data = $query->get();
+    $name = Auth::user()->name;
+
+    return view('dashboard/datapemakaian', compact('data'), [
+        'name' => $name,
+    ]);
+}
+
 
     public function create(){
         $dakai = DataBarang::all();
@@ -109,4 +120,9 @@ class DataPemakaianController extends Controller
 
     return redirect()->route('datapemakaian')->with('success-delete', 'Data Pemakaian deleted successfully!');
     }
+    public function export(Request $request)
+    {
+        return Excel::download(new PemakaianExport($request->start_date, $request->end_date), 'Pemakaian.xlsx');
+    }
+    
 }

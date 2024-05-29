@@ -1,10 +1,10 @@
 @extends('layouts.app')
 @section('content')
+<div class="mb-3">
+    <h3 style="color: #233a4a">{{$role}} Dashboard</h3>
+</div>
         <main class="content px-3 py-2 text-dark">
             <div class="container-fluid">
-                <div class="mb-3">
-                    <h3 style="color: #233a4a">{{$role}} Dashboard</h3>
-                </div>
                 <div class="row" >
                     <div class="col-12 col-md-6 d-flex">
                         <div class="card flex-fill border-0 illustration">
@@ -35,7 +35,7 @@
                                             <div class="mb-0">
                                                 <p id="current-date" class="mt-2"></p>
                                             </div>
-                                        </div>
+                                        </div> 
                                     </div>
                                     <script>
                                         // Fungsi untuk mendapatkan waktu dan mengubah pesan selamat
@@ -77,8 +77,7 @@
                                     
                                         // Panggil updateTime() saat halaman dimuat
                                         updateTime();
-                                        </script>
-                                    
+                                    </script>
                                     <div class="col-2">
                                     </div>
                                     <div class="col-4">
@@ -92,11 +91,11 @@
                 <div class="row mt-5">
                     @if(auth()->user()->hasRole('administrator') || auth()->user()->hasRole('operator'))
                         <div class="col-12 col-md-6 col-lg-3">
-                            <div class="card card-dashboard bg-gray text-dark">
+                            <div class="card card-dashboard bg-dark text-light">
                                 <div class="card-body py-4">
                                     <div class="d-flex align-items-center">
                                         <div class="d-flex align-items-center justify-content-center">
-                                            <h4 class="a-icon"><i class="bi bi-people-fill"></i></h4>
+                                            <h4 class="a-icon"><i class="bi bi-people-fill text-light"></i></h4>
                                             <div class="ms-5 d-flex flex-column gap-3">
                                                 <h5 class="fw-medium">Data User</h5>
                                                 <h1 class="fw-bold">{{ $data['users'] }}</h1>
@@ -107,11 +106,11 @@
                             </div>
                         </div>
                         <div class="col-12 col-md-6 col-lg-3">
-                            <div class="card card-dashboard bg-gray text-dark">
+                            <div class="card card-dashboard bg-dark text-light">
                                 <div class="card-body py-4">
                                     <div class="d-flex align-items-center">
                                         <div class="d-flex align-items-center justify-content-center">
-                                            <h4 class="a-icon"><i class="fa-solid fa-boxes-stacked"></i></h4>
+                                            <h4 class="a-icon"><i class="fa-solid fa-boxes-stacked text-light"></i></h4>
                                             <div class="ms-5 d-flex flex-column gap-3">
                                                 <h5 class="fw-medium">Data Barang</h5>
                                                 <h1 class="fw-bold">{{ $data['barangs'] }}</h1>
@@ -122,11 +121,11 @@
                             </div>
                         </div>
                         <div class="col-12 col-md-6 col-lg-3">
-                            <div class="card card-dashboard bg-gray text-dark">
+                            <div class="card card-dashboard bg-dark text-light">
                                 <div class="card-body py-4">
                                     <div class="d-flex align-items-center">
                                         <div class="d-flex align-items-center justify-content-center">
-                                            <h4 class="a-icon"><i class="fa-solid fa-cart-shopping"></i></h4>
+                                            <h4 class="a-icon"><i class="fa-solid fa-cart-shopping text-light"></i></h4>
                                             <div class="ms-5 d-flex flex-column gap-3">
                                                 <h5 class="fw-medium">Data Pembelian</h5>
                                                 <h1 class="fw-bold">{{ $data['pembelian'] }}</h1>
@@ -137,11 +136,11 @@
                             </div>
                         </div>
                         <div class="col-12 col-md-6 col-lg-3">
-                            <div class="card card-dashboard bg-gray text-dark">
+                            <div class="card card-dashboard bg-dark text-light">
                                 <div class="card-body py-4">
                                     <div class="d-flex align-items-center">
                                         <div class="d-flex align-items-center justify-content-center">
-                                            <h4 class="a-icon"> <i class="fa-solid fa-people-carry-box"></i></h4>
+                                            <h4 class="a-icon"> <i class="fa-solid fa-people-carry-box text-light"></i></h4>
                                             <div class="ms-5 d-flex flex-column gap-3">
                                                 <h5 class="fw-medium">Data Pemakaian</h5>
                                                 <h1 class="fw-bold">{{ $data['pemakaians'] }}</h1>
@@ -154,11 +153,11 @@
                     @endif
                     @if(auth()->user()->hasRole('petugas'))
                         <div class="col-12 col-md-6 col-lg-6">
-                            <div class="card card-dashboard bg-gray text-dark">
+                            <div class="card card-dashboard bg-dark text-light">
                                 <div class="card-body py-4">
                                     <div class="d-flex align-items-center">
                                         <div class="d-flex align-items-center justify-content-center">
-                                            <h4 class="a-icon"><i class="fa-solid fa-boxes-stacked"></i></h4>
+                                            <h4 class="a-icon"><i class="fa-solid fa-boxes-stacked text-light"></i></h4>
                                             <div class="ms-5 d-flex flex-column gap-3">
                                                 <h5 class="fw-medium">Data Barang</h5>
                                                 <h1 class="fw-bold">{{ $data['barangs'] }}</h1>
@@ -169,11 +168,11 @@
                             </div>
                         </div>
                         <div class="col-12 col-md-6 col-lg-6">
-                            <div class="card card-dashboard bg-gray text-dark">
+                            <div class="card card-dashboard bg-dark text-light">
                                 <div class="card-body py-4">
                                     <div class="d-flex align-items-center">
                                         <div class="d-flex align-items-center justify-content-center">
-                                            <h4 class="a-icon"><i class="fa-solid fa-cart-shopping"></i></h4>
+                                            <h4 class="a-icon"><i class="fa-solid fa-cart-shopping text-light"></i></h4>
                                             <div class="ms-5 d-flex flex-column gap-3">
                                                 <h5 class="fw-medium">Data Pembelian</h5>
                                                 <h1 class="fw-bold">{{ $data['pembelian'] }}</h1>

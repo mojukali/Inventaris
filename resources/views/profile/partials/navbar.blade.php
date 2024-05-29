@@ -24,7 +24,7 @@
     <div class="navbar-collapse navbar">
         <ul class="navbar-nav">
             <li class="">
-                <h6 style="color: #233a4a">Hello, {{$name}}!!</h6>
+                <h6 style="color: #233a4a">{{$name}}!!</h6>
             </li>
         </ul>
     </div>

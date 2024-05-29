@@ -2,7 +2,7 @@
 @section('content')
 
 <div class="d-flex">
-    <h3>Data Inventaris</h3>
+    <h3>Laporan Data Inventaris</h3>
   </div>          
   <main class="content px-3 py-2">
     <div class="container-fluid">
@@ -13,7 +13,7 @@
                     <a href="{{route ('inventaris.export')}}" class="btn btn-md nav__link-btn mt-1 mb-3">
                         <i class="bi bi-file-earmark-person-fill pe-2"></i>
                         <span class="visually-hidden "> </span>
-                        Unduh
+                        Laporan Data
                     </a>
                     <thead>
                         <tr>

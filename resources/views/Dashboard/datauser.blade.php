@@ -6,7 +6,7 @@
     <a href="{{route ('admin.create-user')}}" class="btn btn-md nav__link-btn mt-1 mb-3">
         <i class="bi bi-plus-circle"></i>
         <span class="visually-hidden "> </span>
-        Tambah Akun
+        Tambah Account
     </a>
 </div>        
 <main class="content px-3 py-2">
@@ -17,7 +17,7 @@
                 <a href="{{route ('admin.user.export')}}" class="btn btn-md nav__link-btn mt-1 mb-3">
                     <i class="bi bi-file-earmark-person-fill pe-2"></i>
                     <span class="visually-hidden "> </span>
-                    Unduh
+                    Laporan User
                 </a>
                 <table class="table">
                     <thead>

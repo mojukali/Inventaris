@@ -86,6 +86,7 @@ Route::group(['middleware' => ['auth', 'verified', 'role:administrator|operator'
     Route::get('/datapemakaian/edit/{id}', [DataPemakaianController::class, 'edit'])->name('dakai.edit');
     Route::put('/datapemakaian/update/{id}', [DataPemakaianController::class, 'update_pemakaian'])->name('dakai.update');
     Route::delete('/datapemakaian/delete/{id}', [DataPemakaianController::class, 'destroy'])->name('datapemakaian.destroy');
+    Route::get('/datapemakaian/download', [DataPemakaianController::class, 'export'])->name('pemakaian.export');
 });
 
 

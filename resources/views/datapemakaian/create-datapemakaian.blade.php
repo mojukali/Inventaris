@@ -40,8 +40,8 @@
          @error('keterangan')
             <small class="text-danger mb-3 mt-1">{{ $message }}</small>
          @enderror
-         <a href="{{ route('datapemakaian') }}" class="btn btn-secondary mt-3">Close</a>
-         <button type="submit" class="btn btn-primary mt-3">Submit</button>
+         <a href="{{ route('datapemakaian') }}" class="btn btn-secondary mt-3">Gak Jadi</a>
+         <button type="submit" class="btn btn-primary mt-3">Kirim</button>
       </form>
    </div>
 </div>

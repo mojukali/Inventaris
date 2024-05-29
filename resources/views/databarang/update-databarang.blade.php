@@ -31,8 +31,8 @@
                                 @enderror
                           </div>
                           <div class="col-12 mt-3">
-                              <a href="{{ route('databarang') }}" class="btn btn-secondary me-3">Close</a>
-                              <button type="submit" class="btn btn-success">Submit</button>
+                              <a href="{{ route('databarang') }}" class="btn btn-secondary me-3">Gak Jadi</a>
+                              <button type="submit" class="btn btn-success">Kirim</button>
                           </div>
                         </div>
                     </div>
