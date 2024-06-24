@@ -26,10 +26,11 @@
                         </div>
                         <div class="col-md-2">
                             <label>&nbsp;</label>
-                            <button type="submit" class="btn btn-primary btn-block">Filter</button>
+                            <button type="submit" class="btn btn-md nav__link-btn  w-100">Filter</button>
                         </div>
                     </div>
                 </form>
+                
 
                 <a href="{{ route('pemakaian.export', ['start_date' => request('start_date'), 'end_date' => request('end_date')]) }}" class="btn btn-md nav__link-btn mt-1 mb-3">
                     <i class="bi bi-file-earmark-person-fill pe-2"></i>
